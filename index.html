@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>روســــتر شهـــــر فبـــــراير 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            margin: 200px auto;
+            width: 60%;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            width: 30%;
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+        .work-schedule {
+            margin-top: 20px;
+            font-size: 16px;
+            display: inline-block;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            width: 90%;
+            text-align: center;
+        }
+        .day {
+            margin: 10px;
+            padding: 12px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .day span {
+            display: block;
+            font-weight: bold;
+        }
+        .day.long {
+            background-color: #28a745;
+            color: white;
+        }
+        .day.night {
+            background-color: #007bff;
+            color: white;
+        }
+        .day.off {
+            background-color: #dc3545;
+            color: white;
+        }
+        .schedule-item {
+            margin: 10px;
+            display: inline-block;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+        }
+        /* تنسيق النص أسفل الجدول */
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>روســــتر شهـــــر فبـــــراير 2025</h1>
+        <p>أدخل الكود الخاص بك على أيامك في شهر فبراير:</p>
+        <input type="text" id="codeInput" placeholder="أدخل الكود هنا">
+        <button onclick="checkCode()">تــأكــيد</button>
+        <div class="result" id="result"></div>
+        <div class="work-schedule" id="workSchedule"></div>
+    </div>
+
+    <script>
+        // قائمة الأكواد مع الأرقام القومية وجدول أيام العمل بالعربية مع التواريخ كمثال
+        const data = {
+            "12345": {
+                nationalId: "محمد عبدالقادر حسين",
+                schedule: {
+                    "الأحد": { shift: "<b>لونج</b>", date: "25/01/2025" },
+                    "الإثنين": { shift: "<b>نايت</b>", date: "26/01/2025" },
+                    "الثلاثاء": { shift: "<b>أوف</b>", date: "27/01/2025" },
+                    "الأربعاء": { shift: "<b>لونج</b>", date: "28/01/2025" },
+                    "الخميس": { shift: "<b>نايت</b>", date: "29/01/2025" },
+                    "الجمعة": { shift: "<b>أوف</b>", date: "30/01/2025" }
+                }
+            },
+            "54321": {
+                nationalId: "29506051234567",
+                schedule: {
+                    "الأحد": { shift: "<b>نايت</b>", date: "25/01/2025" },
+                    "الإثنين": { shift: "<b>لونج</b>", date: "26/01/2025" },
+                    "الثلاثاء": { shift: "<b>أوف</b>", date: "27/01/2025" },
+                    "الأربعاء": { shift: "<b>نايت</b>", date: "28/01/2025" },
+                    "الخميس": { shift: "<b>لونج</b>", date: "29/01/2025" },
+                    "الجمعة": { shift: "<b>أوف</b>", date: "30/01/2025" }
+                }
+            },
+            "67890": {
+                nationalId: "30002031234567",
+                schedule: {
+                    "الأحد": { shift: "<b>أوف</b>", date: "25/01/2025" },
+                    "الإثنين": { shift: "<b>لونج</b>", date: "26/01/2025" },
+                    "الثلاثاء": { shift: "<b>نايت</b>", date: "27/01/2025" },
+                    "الأربعاء": { shift: "<b>أوف</b>", date: "28/01/2025" },
+                    "الخميس": { shift: "<b>لونج</b>", date: "29/01/2025" },
+                    "الجمعة": { shift: "<b>نايت</b>", date: "30/01/2025" }
+                }
+            }
+        };
+
+        function checkCode() {
+            const code = document.getElementById('codeInput').value.trim();
+            const resultDiv = document.getElementById('result');
+            const workScheduleDiv = document.getElementById('workSchedule');
+
+            if (data[code]) {
+                resultDiv.textContent = `الاســـم: ${data[code].nationalId}`;
+                resultDiv.style.color = "green";
+
+                // عرض جدول أيام العمل
+                const schedule = data[code].schedule;
+                workScheduleDiv.innerHTML = "<h3>أيامك في شهر فبراير 2025:</h3>";
+                
+                Object.keys(schedule).forEach(day => {
+                    const workShift = schedule[day].shift;
+                    const date = schedule[day].date;
+                    const dayElement = document.createElement('div');
+                    dayElement.classList.add('day', workShift.toLowerCase());
+                    dayElement.innerHTML = `<span>${day} (${date})</span><br>${workShift}`;
+                    workScheduleDiv.appendChild(dayElement);
+                });
+
+                // إضافة النص أسفل الجدول
+                const footer = document.createElement('div');
+                footer.classList.add('footer');
+                footer.innerHTML = "<br><b>إدارة الامتياز<br>د/أمنية محمد</b></br>";
+                workScheduleDiv.appendChild(footer);
+
+            } else {
+                resultDiv.textContent = "الكود غير صحيح!";
+                resultDiv.style.color = "red";
+                workScheduleDiv.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
