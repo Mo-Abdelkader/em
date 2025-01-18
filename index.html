@@ -24,7 +24,7 @@
 
         /* الحاوية الرئيسية */
         .container {
-            margin: 100px auto;
+            margin: 200px auto 50px auto; /* زيادة المسافة السفلية إلى 50px */
             padding: 40px;
             background: #fff;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -33,7 +33,7 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
             width: 80%;
             max-width: 600px; /* الحد الأقصى للعرض */
-            position: relative; /* إضافة هذه الخاصية */
+            position: relative;
         }
 
         .container.dark-mode {
@@ -210,7 +210,7 @@
 
         /* إضافة التفاصيل حول الإصدار */
         .version-info {
-            font-size: 12px; /* تغيير حجم الخط إلى صغير */
+            font-size: 14px; /* تكبير حجم الخط قليلاً */
             color: #000; /* اللون الأسود */
             margin-top: 40px; /* تحريك الجملة للأسفل قليلاً */
             text-align: left; /* محاذاة النص لليسار */
@@ -222,57 +222,21 @@
             color: #ccc;
         }
 
-        /* تحسين المظهر في الأجهزة الصغيرة */
-        @media (max-width: 768px) {
-            .container {
-                width: 90%;
-                padding: 25px;
-            }
-
-            input {
-                width: 70%;
-            }
-
-            button {
-                font-size: 16px;
-                padding: 10px 20px;
-            }
-
-            .result {
-                font-size: 18px;
-            }
-
-            .work-schedule {
-                font-size: 14px;
-            }
-
-            .day {
-                width: 80px; /* تقليل العرض أكثر */
-                font-size: 14px;
-            }
+        /* إضافة جملة "الإصدار" في أسفل الصفحة */
+        .version-info {
+            position: fixed;
+            bottom: 10px;
+            left: 20px;
+            font-size: 16px; /* تكبير حجم الخط قليلاً */
+            color: #000;
+            text-align: left;
+            padding-left: 20px;
+            font-weight: normal;
+            z-index: 1000;
         }
 
-        /* تحسين المظهر في الأجهزة الصغيرة جدًا */
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-                margin-top: 50px;
-            }
-
-            input {
-                width: 90%;
-                font-size: 16px;
-            }
-
-            button {
-                font-size: 14px;
-                padding: 8px 15px;
-            }
-
-            .day {
-                width: 70px; /* تقليل العرض أكثر في الأجهزة الصغيرة */
-                font-size: 12px; /* تقليل حجم الخط */
-            }
+        .version-info.dark-mode {
+            color: #ccc;
         }
 
         /* تنسيق أيقونة الواتساب */
@@ -330,22 +294,13 @@
             font-weight: bold;
         }
 
-        /* إضافة جملة "الإصدار" في أسفل الصفحة */
-        .version-info {
-            position: fixed;
-            bottom: 10px;
-            left: 20px;
-            font-size: 12px;
-            color: #000;
-            text-align: left;
-            padding-left: 20px;
-            font-weight: normal;
-            z-index: 1000;
+        /* إضافة جملة "في حالة وجود خطأ" */
+        .error-message {
+            font-size: 18px; /* زيادة حجم الخط */
+            font-weight: bold;
+            color: red;
         }
 
-        .version-info.dark-mode {
-            color: #ccc;
-        }
     </style>
 </head>
 <body>
@@ -362,7 +317,7 @@
 
     <!-- إضافة الملاحظات -->
     <div class="notes">
-        <p style="font-size: 18px; font-weight: bold;">في حالة وجود خطأ في الكود أو الأيام، يرجى التواصل على الواتساب:</p>
+        <p class="error-message">في حالة وجود خطأ في الكود أو الأيام، يرجى التواصل على الواتساب:</p>
         <a href="https://wa.me/01017386654" class="whatsapp-contact">
             <span class="whatsapp-icon"></span> 01017386654
         </a>
