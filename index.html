@@ -13,6 +13,7 @@
             padding: 0;
             background: linear-gradient(to right, #00b4db, #0083b0); /* تدرج لوني جذاب */
             transition: background-color 0.3s ease, color 0.3s ease; /* إضافة تأثير عند التبديل */
+            overflow-x: hidden;
         }
 
         /* حاوية الوضع الداكن */
@@ -24,13 +25,14 @@
         /* الحاوية الرئيسية */
         .container {
             margin: 100px auto;
-            width: 70%;
             padding: 40px;
             background: #fff;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             text-align: center;
             transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+            width: 80%;
+            max-width: 600px; /* الحد الأقصى للعرض */
         }
 
         .container.dark-mode {
@@ -74,7 +76,7 @@
         /* تنسيق الإدخال */
         input {
             padding: 12px;
-            width: 40%;
+            width: 60%;
             margin-bottom: 20px;
             font-size: 18px;
             border: 2px solid #ccc;
@@ -83,6 +85,7 @@
             text-align: center; /* توسيط النص داخل الحقل */
             font-family: 'Roboto', sans-serif; /* تعديل نوع الخط ليتناسب مع الصفحة */
             transition: border-color 0.3s ease;
+            box-sizing: border-box;
         }
 
         input:focus {
@@ -131,6 +134,8 @@
             justify-content: center;
             gap: 15px;
             direction: rtl;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         .day {
