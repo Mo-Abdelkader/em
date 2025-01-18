@@ -30,9 +30,10 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
             text-align: center;
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
             width: 80%;
             max-width: 600px; /* الحد الأقصى للعرض */
+            position: relative; /* إضافة هذه الخاصية */
         }
 
         .container.dark-mode {
@@ -40,8 +41,14 @@
             color: #fff;
         }
 
+        /* إزالة تأثير التحريك عند التمرير بالماوس */
         .container:hover {
-            transform: translateY(-10px);
+            transform: none; /* منع التحريك عند التمرير */
+        }
+
+        /* يمكنك إضافة هذه القاعدة لجعل الحاوية ثابتة عند التمرير عليها */
+        .container:active {
+            transform: none; /* منع التحريك عند الضغط */
         }
 
         /* زر التبديل بين الوضع الداكن والفاتح */
@@ -86,6 +93,7 @@
             font-family: 'Roboto', sans-serif; /* تعديل نوع الخط ليتناسب مع الصفحة */
             transition: border-color 0.3s ease;
             box-sizing: border-box;
+            transform: none; /* تعطيل أي تأثيرات على النص */
         }
 
         input:focus {
@@ -132,17 +140,17 @@
         .days-row {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 10px; /* تقليل المسافة بين الأيام */
             direction: rtl;
             flex-wrap: wrap;
             justify-content: space-between;
         }
 
         .day {
-            margin: 15px;
-            padding: 20px;
-            font-size: 18px;
-            width: 120px;
+            margin: 10px; /* تقليل المسافة حول كل يوم */
+            padding: 12px; /* تقليل حجم الحقل */
+            font-size: 16px; /* تقليل حجم الخط */
+            width: 100px; /* تقليل عرض مربع اليوم */
             text-align: center;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -200,6 +208,20 @@
             color: #ccc;
         }
 
+        /* إضافة التفاصيل حول الإصدار */
+        .version-info {
+            font-size: 12px; /* تغيير حجم الخط إلى صغير */
+            color: #000; /* اللون الأسود */
+            margin-top: 40px; /* تحريك الجملة للأسفل قليلاً */
+            text-align: left; /* محاذاة النص لليسار */
+            padding-left: 20px; /* مسافة من اليسار */
+            font-weight: normal;
+        }
+
+        .version-info.dark-mode {
+            color: #ccc;
+        }
+
         /* تحسين المظهر في الأجهزة الصغيرة */
         @media (max-width: 768px) {
             .container {
@@ -225,7 +247,7 @@
             }
 
             .day {
-                width: 100px;
+                width: 80px; /* تقليل العرض أكثر */
                 font-size: 14px;
             }
         }
@@ -248,29 +270,81 @@
             }
 
             .day {
-                width: 90px;
-                font-size: 14px;
+                width: 70px; /* تقليل العرض أكثر في الأجهزة الصغيرة */
+                font-size: 12px; /* تقليل حجم الخط */
             }
         }
 
-        /* ملاحظات */
+        /* تنسيق أيقونة الواتساب */
+        .whatsapp-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .whatsapp-icon:before {
+            content: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+        }
+
+        .whatsapp-contact {
+            font-size: 16px;
+            color: #fff; /* جعل الرقم أبيض */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .whatsapp-contact:hover {
+            color: #25D366;
+        }
+
+        /* تنسيق الملاحظات */
         .notes {
-            margin-top: 40px;
-            font-size: 18px;
             text-align: center;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 15px;
+            margin-top: 30px;
+            font-size: 16px;
         }
 
-        .notes ul {
-            list-style-type: none;
-            padding: 0;
+        .notes p {
+            margin: 5px 0;
         }
 
-        .notes li {
-            margin-bottom: 10px;
-            color: red;
+        .whatsapp-contact {
+            font-size: 18px; /* تكبير الخط */
+        }
+
+        .note-whatsapp {
+            font-size: 20px; /* تكبير الخط قليلاً */
+            font-weight: bold;
+        }
+
+        /* إضافة جملة "الإصدار" في أسفل الصفحة */
+        .version-info {
+            position: fixed;
+            bottom: 10px;
+            left: 20px;
+            font-size: 12px;
+            color: #000;
+            text-align: left;
+            padding-left: 20px;
+            font-weight: normal;
+            z-index: 1000;
+        }
+
+        .version-info.dark-mode {
+            color: #ccc;
         }
     </style>
 </head>
@@ -285,14 +359,18 @@
         <div class="result" id="result"></div>
         <div class="work-schedule" id="workSchedule"></div>
     </div>
-    
-    <div class="notes" id="notes">
-        <h4>ملاحظات:</h4>
-        <ul>
-            <li style="color: red;">الرجاء كتابة الكود بدون أرقام عربية</li>
-            <li style="color: red;">ملاحظة 2: العمل قد يتغير بناءً على الظروف.</li>
-            <li style="color: red;">ملاحظة 3: يرجى التواصل مع الإدارة إذا كانت هناك أي استفسارات.</li>
-        </ul>
+
+    <!-- إضافة الملاحظات -->
+    <div class="notes">
+        <p style="font-size: 18px; font-weight: bold;">في حالة وجود خطأ في الكود أو الأيام، يرجى التواصل على الواتساب:</p>
+        <a href="https://wa.me/01017386654" class="whatsapp-contact">
+            <span class="whatsapp-icon"></span> 01017386654
+        </a>
+    </div>
+
+    <!-- إضافة جملة الإصدار -->
+    <div class="version-info">
+        الإصدار: V1.1 <br> أخر تعديل: 2/2/2025 <br> Code By Abdelkader
     </div>
 
     <script>
