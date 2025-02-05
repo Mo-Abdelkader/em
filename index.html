@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
-    <title>روســــتر شهـــــر فبـــــراير 2025</title>
+    <title>روســــتر شهــــر مــــارس 2025</title>
     <style>
         /* تنسيق الجسم بشكل عام */
         body {
@@ -41,16 +41,6 @@
             color: #fff;
         }
 
-        /* إزالة تأثير التحريك عند التمرير بالماوس */
-        .container:hover {
-            transform: none; /* منع التحريك عند التمرير */
-        }
-
-        /* يمكنك إضافة هذه القاعدة لجعل الحاوية ثابتة عند التمرير عليها */
-        .container:active {
-            transform: none; /* منع التحريك عند الضغط */
-        }
-
         /* زر التبديل بين الوضع الداكن والفاتح */
         #toggleButton {
             position: fixed;
@@ -76,10 +66,6 @@
             transform: scale(1.1);
         }
 
-        #toggleButton.dark-mode:hover {
-            background-color: #444;
-        }
-
         /* تنسيق الإدخال */
         input {
             padding: 12px;
@@ -93,7 +79,6 @@
             font-family: 'Roboto', sans-serif; /* تعديل نوع الخط ليتناسب مع الصفحة */
             transition: border-color 0.3s ease;
             box-sizing: border-box;
-            transform: none; /* تعطيل أي تأثيرات على النص */
         }
 
         input:focus {
@@ -190,6 +175,7 @@
             height: 1px;
             background-color: #ddd;
             margin: 20px 0;
+            display: none; /* إخفاء الخط بشكل افتراضي */
         }
 
         .separator.dark-mode {
@@ -239,1753 +225,101 @@
             color: #ccc;
         }
 
-        /* تنسيق أيقونة الواتساب */
-        .whatsapp-icon {
-            width: 30px;
-            height: 30px;
-            background-color: #25D366;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 10px;
-            position: relative;
+        /* تنسيق الإجازات */
+        .vacation-info {
+            font-size: 18px;
+            color: #333;
+            font-weight: normal;
+            margin-top: 20px;
         }
 
-        .whatsapp-icon:before {
-            content: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 20px;
-            height: 20px;
+        .vacation-info.dark-mode {
+            color: #ccc;
         }
 
-        .whatsapp-contact {
-            font-size: 16px;
-            color: #fff; /* جعل الرقم أبيض */
-            text-decoration: none;
-            display: flex;
-            align-items: center;
+        /* إضافة الخط تحت الإجازات */
+        .vacation-info + .separator {
             margin-top: 10px;
-            justify-content: center;
         }
 
-        .whatsapp-contact:hover {
-            color: #25D366;
-        }
-
-        /* تنسيق الملاحظات */
-        .notes {
-            text-align: center;
-            margin-top: 30px;
+        /* إضافة النص تحت الإجازات */
+        .footer-text {
             font-size: 16px;
+            color: #333;
+            margin-top: 10px;
         }
 
-        .notes p {
-            margin: 5px 0;
+        .footer-text.dark-mode {
+            color: #ccc;
         }
 
-        .whatsapp-contact {
-            font-size: 18px; /* تكبير الخط */
+        /* تعديل المسافة بين النصوص */
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
         }
-
-        .note-whatsapp {
-            font-size: 20px; /* تكبير الخط قليلاً */
-            font-weight: bold;
-        }
-
-        /* إضافة جملة "في حالة وجود خطأ" */
-        .error-message {
-            font-size: 24px; /* تكبير حجم الخط */
-            font-weight: bold;
-            color: black; /* اللون الأسود */
-        }
-
-        /* تكبير خط كلمة "أدخل الكود الخاص بك" */
-        .container p {
-            font-size: 20px; /* زيادة حجم الخط */
-        }
-
-        @media (max-width: 600px) {
-            .container p {
-                font-size: 24px; /* زيادة الحجم أكثر في الهواتف */
-            }
-        }
-
     </style>
 </head>
 <body>
-    <button id="toggleButton">🌙</button> <!-- زر التبديل بين الوضع الداكن والفاتح -->
+
+    <!-- إضافة اللوجو في أعلى الصفحة -->
+    <div style="position: absolute; top: 10px; left: 10px;">
+        <img src="file:///C:/Users/Mo/Desktop/New%20folder%20(2)/logo.png" alt="Logo" width="150" height="auto">
+    </div>
 
     <div class="container">
-        <h1>روســــتر شهـــــر فبـــــراير 2025</h1>
-        <p>أدخل الكود الخاص بك على أيامك في شهر فبراير</p>
-        <input type="text" id="codeInput" placeholder="أدخل الكود هنا">
-        <button onclick="checkCode()"><b>تأكيد</b></button>
+		<h1>روســــتر شهــــر مــــارس 2025</h1>
+		<div class="description">أدخل الكود الخاص بك لعرض أيامك في شهر مارس<br><br></div>
+        <input type="text" id="codeInput" placeholder="أدخل الكود الخاص بك" />
+        <button onclick="checkCode()">تحقق</button>
         <div class="result" id="result"></div>
         <div class="work-schedule" id="workSchedule"></div>
-    </div>
-
-    <!-- إضافة الملاحظات -->
-    <div class="notes">
-        <p class="error-message">في حالة وجود خطأ في الكود أو الأيام، يرجى التواصل على الواتساب</p>
-        <a href="https://wa.me/01017386654" class="whatsapp-contact">
-            <span class="whatsapp-icon"></span> 01017386654
-        </a>
-    </div>
-
-    <!-- إضافة جملة الإصدار -->
-    <div class="version-info">
-        الإصدار: V1.1 <br> أخر تعديل: 2/2/2025 <br> Code By Abdelkader
+        <div class="separator" id="separator"></div>
+        <div class="footer">
+            <p class="version-info">نسخة 1.0</p>
+        </div>
     </div>
 
     <script>
-        // قائمة الأكواد مع الأرقام القومية وجدول أيام العمل
         const data = {
             "12345": {
                 nationalId: "محمد عبدالقادر حسين",
                 department: "قسم البرمجة",
                 schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>نايت</b>" },
-                    "3": { shift: "<b>أوف</b>" },
-                    "4": { shift: "<b>لونج</b>" },
-                    "5": { shift: "<b>نايت</b>" },
-                    "6": { shift: "<b>أوف</b>" },
-                    "7": { shift: "<b>لونج</b>" },
-                    "8": { shift: "<b>نايت</b>" },
-                    "9": { shift: "<b>أوف</b>" },
-                    "10": { shift: "<b>لونج</b>" },
-                    "11": { shift: "<b>نايت</b>" },
-                    "12": { shift: "<b>لونج</b>" }
-                }
-            },
-			            "9H2A5J3F": {
-                nationalId: "شيماء السيد",
-                department: "عناية جراحية",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>N</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>L</b>" }
-                }
-            },
-			"Z1P3K9M8": {
-                nationalId: "الآء طارق",
-				department: "عناية جراحية",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>N</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"B4T7V0E1": {
-                nationalId: "هايدي محمد",
-				department: "عناية جراحية",
-                schedule: {
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" }
-                }
-            },
-			"G6L9Y3C7": {
-                nationalId: "فاطمة مروان",
-				department: "عناية جراحية",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" }
-                }
-            },
-			"K0D4X2J5": {
-                nationalId: "روان محمد",
-				department: "عناية جراحية",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"W9Q8F2S1": {
-                nationalId: "هاجر حمدي",
-				department: "عناية جراحية",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"C6Z5A3T2": {
-                nationalId: "فاطمة الزهراء",
-				department: "عناية جراحية",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"H4M1K7G9": {
-                nationalId: "محمد السيد",
-				department: "عناية جراحية",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"R3V8P0J4": {
-                nationalId: "محمد رجب",
-				department: "عناية جراحية",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"Y7F6Q1L2": {
-                nationalId: "أحمد إيهاب",
-				department: "عناية جراحية",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"E3W9B5K1": {
-                nationalId: "محمد فرحات",
-				department: "عناية جراحية",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"D5R1V8Z4": {
-                nationalId: "عبدالله فتحي",
-				department: "حضانة",
-                schedule: {
-                    "2": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"L2H7J4F5": {
-                nationalId: "مريم مصطفى",
-				department: "حضانة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>N</b>" }
-                }
-            },
-			"T6Q0M3X9": {
-                nationalId: "ابتهال أحمد",
-				department: "حضانة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>N</b>" }
-                }
-            },
-			"B3N9S1K2": {
-                nationalId: "محمد سمير",
-				department: "حضانة",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"F8R4C6G2": {
-                nationalId: "عبدالحميد عبدالوهاب",
-				department: "حضانة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"J2X7L1Z5": {
-                nationalId: "هند عيد",
-				department: "حضانة",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"Q3F9W0K4": {
-                nationalId: "غادة عبدالعاطي",
-				department: "حضانة",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"C6P5E3D2": {
-                nationalId: "سماء هشام",
-				department: "حضانة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"K7Y1T4Z9": {
-                nationalId: "تقى محمد",
-				department: "حضانة",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"G0V3M5J8": {
-                nationalId: "هند محمد",
-				department: "حضانة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>N</b>" }
-                }
-            },
-			"Z8A2F1R3": {
-                nationalId: "حنين علاء",
-				department: "حضانة",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"L4K9P2M6": {
-                nationalId: "عبداللطيف محمود",
-				department: "طوارئ",
-                schedule: {
-                    "1": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"Y1X8G7C5": {
-                nationalId: "شهدان محمد",
-                department: "طوارئ",
-                schedule: {
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" }
-                }
-            },
-			"H6J0B4T2": {
-                nationalId: "سلمى وائل",
-                department: "طوارئ",
-                schedule: {
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"M9Z5Q3V1": {
-                nationalId: "دعاء جاسر",
-                department: "طوارئ",
-                schedule: {
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>N</b>" }
-                }
-            },
-			"J2X0L8F3": {
-                nationalId: "أحمد عبدالعليم",
-                department: "طوارئ",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"S1R9P7K4": {
-                nationalId: "منى محمد عبدالرازق",
-                department: "طوارئ",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"C3T6V8W2": {
-                nationalId: "نسمة السيد",
-                department: "طوارئ",
-                schedule: {
-                    "1": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"W9B2Q1M7": {
-                nationalId: "أحمد محمد حميدة",
-                department: "طوارئ",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"F1L6P0Z5": {
-                nationalId: "شيماء فكري",
-                department: "طوارئ",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"H9K3G7J2": {
-                nationalId: "روان هاني",
-                department: "طوارئ",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" }
-                }
-            },
-			"T0F4V8W6": {
-                nationalId: "أسماء محمود",
-                department: "طوارئ",
-                schedule: {
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "10": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"X5Z1M2P7": {
-                nationalId: "عبدالله مراجع",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "1": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"G3J9Y0F1": {
-                nationalId: "ندى محمد مسعد",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" }
-                }
-            },
-			"Y7P1T5L4": {
-                nationalId: "آية شريف",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"R6X8K3V0": {
-                nationalId: "أمنية عادل",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>N</b>" }
-                }
-            },
-			"Z2J4G5F9": {
-                nationalId: "محمد فتوح",
-                ddepartment: "إدارة عناية الباطنة",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"D5Q8V2P6": {
-                nationalId: "فاطمة عادل",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"W9F1X4M7": {
-                nationalId: "أسماء جمال",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>N</b>" },
-                    "29": { shift: "<b>N</b>" }
-                }
-            },
-			"B0H2C9J3": {
-                nationalId: "محمد أحمد عبدالحميد",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"P3X1M7T5": {
-                nationalId: "هايدي مصطفى",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "1": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"R4L9V6G2": {
-                nationalId: "ياسمين محمد",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>N</b>" }
-                }
-            },
-			"T2Z5P3B1": {
-                nationalId: "حمزة أحمد",
-                department: "إدارة عناية الباطنة",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"Y6J0M4K9": {
-                nationalId: "أحمد المصري",
-                department: "غسيل كلوي",
-                schedule: {
-                    "1": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"F1W8C5P7": {
-                nationalId: "ولاء محمد",
-                department: "غسيل كلوي",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>N</b>" }
-                }
-            },
-			"K7X2V9G3": {
-                nationalId: "مارتينا وجيه",
-                department: "غسيل كلوي",
-                schedule: {
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"M4Y1T9H6": {
-                nationalId: "لمياء محمد",
-                department: "غسيل كلوي",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>N</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"L8J2Q3F5": {
-                nationalId: "عوض خالد",
-                department: "غسيل كلوي",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"Z0K7B1X9": {
-                nationalId: "ليلى ماهر",
-                department: "غسيل كلوي",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"D5R0V2P9": {
-                nationalId: "ريم حاتم",
-                department: "غسيل كلوي",
-                schedule: {
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>N</b>" }
-                }
-            },
-			"F3M6T1J8": {
-                nationalId: "محمد عادل",
-                department: "غسيل كلوي",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"T4P0X2K7": {
-                nationalId: "رحمة شعبان",
-                department: "غسيل كلوي",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"V8F1C5G3": {
-                nationalId: "إيمان عبدالحميد",
-                department: "غسيل كلوي",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"B9Y2R6M0": {
-                nationalId: "إسراء نجاح",
-                department: "غسيل كلوي",
-                schedule: {
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "10": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"H7P3J1X9": {
-                nationalId: "محمود أشرف",
-                department: "عمليات",
-                schedule: {
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" }
-                }
-            },
-			"M2V0Z5K3": {
-                nationalId: "أكوم محمد",
-                department: "عمليات",
-                schedule: {
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" }
-                }
-            },
-			"R1J8L6T2": {
-                nationalId: "سعدية كمال",
-                department: "عمليات",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"S5G0V7F1": {
-                nationalId: "نرمين محمد",
-                department: "عمليات",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" }
-                }
-            },
-			"W9T2X3P5": {
-                nationalId: "عمرو إبراهيم",
-                department: "عمليات",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" }
-                }
-            },
-			"X1K0F8M7": {
-                nationalId: "هدى محمد",
-                department: "عمليات",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" }
-                }
-            },
-			"K3B9L5Y2": {
-                nationalId: "إسراء عبدالسميع",
-                department: "عمليات",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" }
-                }
-            },
-			"J4V2T1G7": {
-                nationalId: "سلمى هشام",
-                department: "عمليات",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" }
-                }
-            },
-			"P7H6R3F0": {
-                nationalId: "أسماء عبدالنبي",
-                department: "عمليات",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" }
-                }
-            },
-			"C5Z9Y1J2": {
-                nationalId: "هدير أحمد",
-                department: "عمليات",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" }
-                }
-            },
-			"T8M4X7L1": {
-                nationalId: "محمد حسن",
-                department: "عمليات",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" }
-                }
-            },
-			"F1B0V2K3": {
-                nationalId: "أحمد العبد",
-                department: "عناية باطنة",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" }
-                }
-            },
-			"R9J5M3P7": {
-                nationalId: "حبيبة محمد",
-                department: "عناية باطنة",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" }
-                }
-            },
-			"L2Y4G8T1": {
-                nationalId: "ندا أحمد",
-                department: "عناية باطنة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>N</b>" }
-                }
-            },
-			"W0V5F9K3": {
-                nationalId: "هدير إسماعيل",
-                department: "عناية باطنة",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>N</b>" }
-                }
-            },
-			"M6J7X1C9": {
-                nationalId: "ندى طارق",
-                department: "عناية باطنة",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"B4P9F2T5": {
-                nationalId: "ضحى أشرف",
-                department: "عناية باطنة",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"Y3X7M0K2": {
-                nationalId: "مهند فاضل",
-                department: "عناية باطنة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"H1J6P4T9": {
-                nationalId: "منصور صالح",
-                department: "عناية باطنة",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"F7R3V9G0": {
-                nationalId: "روضة خيري",
-                department: "عناية باطنة",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"K2M1L4J5": {
-                nationalId: "فاطمة إبراهيم",
-                department: "عناية باطنة",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"Z5P0T9C3": {
-                nationalId: "ماهر رفعت",
-                department: "عناية باطنة",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"M9Y7F4V2": {
-                nationalId: "مهند حمدي",
-                department: "عناية قلب",
-                schedule: {
-                    "1": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "13": { shift: "<b>L</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"T1X8K0J5": {
-                nationalId: "منى ضاحي",
-                department: "عناية قلب",
-                schedule: {
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>N</b>" }
-                }
-            },
-			"W4L3F9P7": {
-                nationalId: "إسراء رضا",
-                department: "عناية قلب",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>L</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>N</b>" }
-                }
-            },
-			"G7V5M2T1": {
-                nationalId: "آية شعبان",
-                department: "عناية قلب",
-                schedule: {
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>N</b>" }
-                }
-            },
-			"J3T9X4R6": {
-                nationalId: "سماح لطفي",
-                department: "عناية قلب",
-                schedule: {
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"Y0P2F7B8": {
-                nationalId: "شيماء أنور",
-                department: "عناية قلب",
-                schedule: {
-                    "4": { shift: "<b>N</b>" },
-                    "5": { shift: "<b>N</b>" },
-                    "6": { shift: "<b>N</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "17": { shift: "<b>L</b>" },
-                    "18": { shift: "<b>L</b>" },
-                    "19": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>N</b>" }
-                }
-            },
-			"H1V6K9J3": {
-                nationalId: "أحمد عزت",
-                department: "عناية قلب",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"K4F0T7P9": {
-                nationalId: "علاء أشرف",
-                department: "عناية قلب",
-                schedule: {
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" },
-                    "13": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>N</b>" },
-                    "15": { shift: "<b>N</b>" },
-                    "22": { shift: "<b>N</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "24": { shift: "<b>N</b>" },
-                    "26": { shift: "<b>L</b>" },
-                    "27": { shift: "<b>L</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"M5Y2G3X1": {
-                nationalId: "يسرا سمير",
-                department: "عناية قلب",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>N</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>L</b>" }
-                }
-            },
-			"L8X9J1R5": {
-                nationalId: "مريم صابر",
-                department: "عناية قلب",
-                schedule: {
-                    "10": { shift: "<b>N</b>" },
-                    "11": { shift: "<b>N</b>" },
-                    "12": { shift: "<b>N</b>" },
-                    "14": { shift: "<b>L</b>" },
-                    "15": { shift: "<b>L</b>" },
-                    "16": { shift: "<b>L</b>" },
-                    "23": { shift: "<b>L</b>" },
-                    "24": { shift: "<b>L</b>" },
-                    "25": { shift: "<b>L</b>" },
-                    "26": { shift: "<b>N</b>" },
-                    "27": { shift: "<b>N</b>" },
-                    "28": { shift: "<b>N</b>" }
-                }
-            },
-			"F0B7T2V3": {
-                nationalId: "إسراء طارق",
-                department: "عناية قلب",
-                schedule: {
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>N</b>" },
-                    "9": { shift: "<b>N</b>" },
-                    "10": { shift: "<b>N</b>" },
-                    "16": { shift: "<b>N</b>" },
-                    "17": { shift: "<b>N</b>" },
-                    "18": { shift: "<b>N</b>" },
-                    "20": { shift: "<b>L</b>" },
-                    "21": { shift: "<b>L</b>" },
-                    "22": { shift: "<b>L</b>" }
-                }
-            },
-			"yy": {
-                nationalId: "السيد",
-                department: "قسم الموارد البشرية",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" }
-                }
-            },
-            "yy": {
-                nationalId: "السيد",
-                department: "قسم الموارد البشرية",
-                schedule: {
-                    "1": { shift: "<b>L</b>" },
-                    "2": { shift: "<b>L</b>" },
-                    "3": { shift: "<b>L</b>" },
-                    "4": { shift: "<b>L</b>" },
-                    "5": { shift: "<b>L</b>" },
-                    "6": { shift: "<b>L</b>" },
-                    "7": { shift: "<b>L</b>" },
-                    "8": { shift: "<b>L</b>" },
-                    "9": { shift: "<b>L</b>" },
-                    "10": { shift: "<b>L</b>" },
-                    "11": { shift: "<b>L</b>" },
-                    "12": { shift: "<b>L</b>" }
+                    "1": { shift: "<b>L</b>", highlight: false },
+                    "2": { shift: "<b>نايت</b>", highlight: false },
+                    "3": { shift: "<b>أوف</b>", highlight: false },
+                    "4": { shift: "<b>لونج</b>", highlight: true },
+                    "5": { shift: "<b>نايت</b>", highlight: false },
+                    "6": { shift: "<b>أوف</b>", highlight: false },
+                    "7": { shift: "<b>لونج</b>", highlight: true },
+                    "8": { shift: "<b>نايت</b>", highlight: false },
+                    "9": { shift: "<b>أوف</b>", highlight: false },
+                    "10": { shift: "<b>لونج</b>", highlight: false },
+                    "11": { shift: "<b>نايت</b>", highlight: false },
+                    "12": { shift: "<b>لونج</b>", highlight: false }
+                },
+                vacations: {
+                    regular: 2,
+                    emergency: 5,
+                    substitution: 1
                 }
             }
         };
+
+        function toggleMode() {
+            const body = document.body;
+            const button = document.getElementById('toggleButton');
+            body.classList.toggle('dark-mode');
+            button.classList.toggle('dark-mode');
+        }
 
         function checkCode() {
             const code = document.getElementById('codeInput').value.trim();
             const resultDiv = document.getElementById('result');
             const workScheduleDiv = document.getElementById('workSchedule');
+            const separator = document.getElementById('separator');
 
             if (data[code]) {
                 const user = data[code];
@@ -1993,66 +327,69 @@
                 resultDiv.style.color = "green";
 
                 const schedule = user.schedule;
-                workScheduleDiv.innerHTML = "<h3>أيامك في شهر فبراير 2025:</h3>";
+                workScheduleDiv.innerHTML = "<h3>:أيامك في شهر مارس 2025</h3>";
 
                 // عرض أول 6 أيام في صف
                 const upperRow = document.createElement('div');
                 upperRow.classList.add('days-row');
                 Object.keys(schedule).slice(0, 6).forEach(day => {
                     const workShift = schedule[day].shift;
+                    const highlight = schedule[day].highlight;
                     const dayElement = document.createElement('div');
                     dayElement.classList.add('day', workShift.toLowerCase());
+                    if (highlight) {
+                        dayElement.style.backgroundColor = '#FFA500'; // اللون البرتقالي
+                    }
                     dayElement.innerHTML = `<span>يوم ${day}</span><br>${workShift}`;
                     upperRow.appendChild(dayElement);
                 });
                 workScheduleDiv.appendChild(upperRow);
 
                 // إضافة الخط الفاصل
-                const separator = document.createElement('div');
-                separator.classList.add('separator');
-                workScheduleDiv.appendChild(separator);
+                separator.style.display = "block";
 
                 // عرض الـ 6 أيام المتبقية في صف
                 const lowerRow = document.createElement('div');
                 lowerRow.classList.add('days-row');
                 Object.keys(schedule).slice(6).forEach(day => {
                     const workShift = schedule[day].shift;
+                    const highlight = schedule[day].highlight;
                     const dayElement = document.createElement('div');
                     dayElement.classList.add('day', workShift.toLowerCase());
+                    if (highlight) {
+                        dayElement.style.backgroundColor = '#FFA500'; // اللون البرتقالي
+                    }
                     dayElement.innerHTML = `<span>يوم ${day}</span><br>${workShift}`;
                     lowerRow.appendChild(dayElement);
                 });
                 workScheduleDiv.appendChild(lowerRow);
 
-                // إضافة النص أسفل الجدول
-                const footer = document.createElement('div');
-                footer.classList.add('footer');
-                footer.innerHTML = "<br><b>إدارة الامتياز<br>د/أمنية محمد</b></br>";
-                workScheduleDiv.appendChild(footer);
+                // عرض الإجازات
+                const vacationDiv = document.createElement('div');
+                vacationDiv.classList.add('vacation-info');
+                vacationDiv.innerHTML = `<h3>:عدد الأجازات</h3>
+                                        <p>أجازات اعتيادي: <b style="color:green;">${user.vacations.regular}</b> <b>|</b> أجازات عارضة: <b style="color:blue;">${user.vacations.emergency}</b> <b>|</b> أجازات بدل: <b style="color:red;">${user.vacations.substitution}</b></p>`;
+                workScheduleDiv.appendChild(vacationDiv);
+
+                // إضافة الخط الفاصل تحت الإجازات
+                const separatorAfterVacations = document.createElement('div');
+                separatorAfterVacations.classList.add('separator');
+                workScheduleDiv.appendChild(separatorAfterVacations);
+
+                // إضافة جملة إدارة الامتياز
+                const footerText = document.createElement('div');
+                footerText.classList.add('footer-text');
+                footerText.innerHTML = "<b>إدارة الامتياز د/ أمنية محمد</b>";
+                workScheduleDiv.appendChild(footerText);
 
             } else {
-                resultDiv.textContent = "الكود غير صحيح!";
-                resultDiv.style.color = "black";  /* تغيير اللون إلى الأسود */
+                resultDiv.innerHTML = "الكود غير صحيح، يرجى المحاولة مرة أخرى.";
+                resultDiv.style.color = "red";
                 workScheduleDiv.innerHTML = "";
+                separator.style.display = "none";
             }
         }
-
-        // إضافة وظيفة زر التبديل بين الوضع الداكن والفاتح
-        const toggleButton = document.getElementById('toggleButton');
-        toggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            document.querySelector('.container').classList.toggle('dark-mode');
-            document.querySelector('.footer').classList.toggle('dark-mode');
-            document.querySelector('.separator').classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark-mode');
-            
-            // تغيير الرمز عند التبديل
-            if (document.body.classList.contains('dark-mode')) {
-                toggleButton.innerHTML = '🌞'; // تغيير الرمز إلى الشمس
-            } else {
-                toggleButton.innerHTML = '🌙'; // تغيير الرمز إلى القمر
-            }
-        });
     </script>
+
 </body>
 </html>
